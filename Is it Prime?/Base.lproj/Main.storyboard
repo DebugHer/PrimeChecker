@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,72 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Is_it_Prime_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRIME CHECKER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPp-6H-Zxx">
+                                <rect key="frame" x="89" y="63" width="197" height="31.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Positive WholeNumber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYQ-jf-zfO">
+                                <rect key="frame" x="71" y="124" width="233" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g 4,6,8" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zq5-tt-ieZ">
+                                <rect key="frame" x="20" y="165" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="numberEntered:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="3O5-Up-ddQ"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v89-IX-lzG">
+                                <rect key="frame" x="165.5" y="219" width="44" height="30"/>
+                                <state key="normal" title="Check"/>
+                                <connections>
+                                    <action selector="checkPrime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rBT-iB-sub"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZC-oA-mcp">
+                                <rect key="frame" x="20" y="269" width="335" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qPp-6H-Zxx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1im-A5-TXR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zq5-tt-ieZ" secondAttribute="trailing" constant="20" id="2a4-5I-IVc"/>
+                            <constraint firstItem="XYQ-jf-zfO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5cl-IE-osE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UZC-oA-mcp" secondAttribute="trailing" constant="20" id="5yT-Gn-E4x"/>
+                            <constraint firstItem="XYQ-jf-zfO" firstAttribute="top" secondItem="qPp-6H-Zxx" secondAttribute="bottom" constant="29.5" id="ET5-i5-gW5"/>
+                            <constraint firstItem="v89-IX-lzG" firstAttribute="top" secondItem="zq5-tt-ieZ" secondAttribute="bottom" constant="24" id="MkW-x0-D3j"/>
+                            <constraint firstItem="zq5-tt-ieZ" firstAttribute="top" secondItem="XYQ-jf-zfO" secondAttribute="bottom" constant="20" id="Q8k-vQ-gPc"/>
+                            <constraint firstItem="qPp-6H-Zxx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="43" id="V96-Yd-o4f"/>
+                            <constraint firstItem="UZC-oA-mcp" firstAttribute="top" secondItem="v89-IX-lzG" secondAttribute="bottom" constant="20" id="Zh5-OM-ZLP"/>
+                            <constraint firstItem="v89-IX-lzG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cSq-T6-8j2"/>
+                            <constraint firstItem="zq5-tt-ieZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="iQN-LO-C1J"/>
+                            <constraint firstItem="UZC-oA-mcp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="taK-6L-QbV"/>
+                            <constraint firstItem="zq5-tt-ieZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ucf-v6-KuE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="numberEntered" destination="zq5-tt-ieZ" id="67X-nK-dgA"/>
+                        <outlet property="statusPrime" destination="UZC-oA-mcp" id="fu0-YD-pn7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="135.19999999999999" y="131.78410794602701"/>
         </scene>
     </scenes>
 </document>
